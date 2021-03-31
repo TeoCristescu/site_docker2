@@ -1,0 +1,44 @@
+version: "3.2"
+services:
+  php:
+    build: 
+      context: .
+    image: teocristescu/cicd04:latest
+    networks:
+      - frontend
+      - backend
+    environment:
+      - MYSQL_HOST=localhost
+      - MYSQL_USER=teo
+      - MYSQL_PASSWORD=1234
+      - MYSQL_DB=baza1
+    ports:
+      - "30001:80"
+    container_name: container_php
+  mysql:
+    image: mysql:5.7
+    networks:
+      - backend
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_USER=teo
+      - MYSQL_PASSWORD=1234
+      - MYSQL_DATABASE=teo_db
+    container_name: container_sql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7
+    depends_on:
+      - mysql
+    networks:
+      - backend
+    ports:
+      - "30002:80"
+    environment:
+      - PMA_HOST=container_sql
+      - PMA_PORT= 3306
+    volumes:
+      - /sessions
+    container_name: container_phpmyadmin
+networks:
+  frontend:
+  backend:
