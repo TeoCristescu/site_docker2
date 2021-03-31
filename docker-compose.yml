@@ -1,9 +1,7 @@
 version: "3.2"
 services:
   php:
-    build: 
-      context: .
-    image: teocristescu/cicd04:latest
+    image: teocristescu/cicd04
     networks:
       - frontend
       - backend
@@ -23,7 +21,11 @@ services:
       - MYSQL_ROOT_PASSWORD=rootpassword
       - MYSQL_USER=teo
       - MYSQL_PASSWORD=1234
-      - MYSQL_DATABASE=teo_db
+      - MYSQL_DATABASE=baza1
+    ports:
+      - "3306:3306"
+    volumes:
+      - /tmp/mysql/:/var/lib/mysql
     container_name: container_sql
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:4.7
