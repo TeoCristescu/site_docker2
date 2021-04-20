@@ -219,7 +219,7 @@ else
 
     <section class="on-sale">
       <div class="title-box">
-        <h2>CICD06</h2>
+        <h2>CICD07</h2>
       </div>
 
 <?php
