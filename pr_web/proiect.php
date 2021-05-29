@@ -278,7 +278,7 @@ mysqli_close($conn);
         <div class="col-md-3 feature-box">
           <img src="img/f4png.png">
           <div class="feature-text">
-            <p><b>Mai multe metode de plata</b></p>
+            <p><b>Mai multe metode de plataaa</b></p>
           </div>
         </div>
 
