@@ -22,7 +22,7 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
       run: docker build . --file dockerfile --tag teocristescu/cicd06:latest
-    - run: docker tag teocristescu/cicd07:latest teocristescu/cicd07:${GITHUB_SHA:0:7}
+    - run: docker tag teocristescu/cicd06:latest teocristescu/cicd06:${GITHUB_SHA:0:7}
   
     - name: Docker Push
-      run: docker push teocristescu/cicd07:${GITHUB_SHA:0:7}
+      run: docker push teocristescu/cicd06:${GITHUB_SHA:0:7}
