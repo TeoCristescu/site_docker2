@@ -219,7 +219,7 @@ else
 
     <section class="on-sale">
       <div class="title-box">
-        <h2>test 7 practic</h2>
+        <h2>test 6 practic github</h2>
       </div>
 
 <?php
